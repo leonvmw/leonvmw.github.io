@@ -1,0 +1,68 @@
+{
+    "AgentLogs" : {
+        "title" : "WSOne Agent Log Format",
+        "description" : "WSOne Agent Log Format",
+        "json": true,
+        "timestamp-field": "@t",
+        "level-field" : "@l",
+        "body-field" : "@mt",
+        "module-field": "SourceContext",
+        "file-pattern" : ".*\\.log$",
+        "level" : {
+            "error" : "Error",
+            "warning" : "Warning",
+            "info" : "Info",
+            "debug" : "Debug",
+            "trace" : "Trace"
+        },
+        "convert-to-local-time" : true,
+        "value" : {
+            "@t": { 
+                "kind": "string"
+            },
+            "@mt" : {
+                "kind" : "string"
+            },
+            "@l" : {
+                "kind" : "string"
+            },
+            "0" : {
+                "kind" : "string"
+            },
+            "SourceContext" : {
+                "kind" : "string"
+            },
+            "ThreadId" : {
+                "kind" : "integer"
+            },
+            "ProcessId" : {
+                "kind" : "integer"
+            },
+            "ProcessName" : {
+                "kind" : "string"
+            },
+            "MachineName" : {
+                "kind" : "string"
+            },
+            "EnvironmentName" : {
+                "kind" : "string"
+            },
+            "EnvironmentUserName" : {
+                "kind" : "string"
+            }
+        },
+        "line-format": [
+            {
+              "field": "@t"
+            },
+            "|",
+            {
+              "field": "@l"
+            },
+            "|",
+            {
+              "field": "@mt"
+            }
+          ]
+    }
+}
